@@ -25,8 +25,5 @@ yt = test['meal']
 
 xt = test.drop(['meal', 'DateTime', 'id'], axis=1)
 
-pred = model.predict(xt)
-
-pred.astype(float)
-
-print("test")
+pred = list(modelFit.predict(xt))
+pred = [int(i) for i in pred]
